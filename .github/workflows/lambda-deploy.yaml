@@ -10,14 +10,14 @@
 
   jobs:
     deploy-lambda: # name of our job
-      runs-on: ubuntu-layest # Sets or specifies the runner
+      runs-on: ubuntu-latest # Sets or specifies the runner
       steps:
         - uses: actions/checkout@v2
 
         - name: Set Up Python # Setsup our python enviroment
           uses: actions/setup-python@v2
           with:
-            python-version: '3.14'
+            python-version: '3.12'
 
         - name: Installs dependencies # Installs any packages
           run: |
