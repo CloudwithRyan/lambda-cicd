@@ -4,10 +4,7 @@ on:
   pull_request:
     paths:
       - 'cloudformation/**'
-    types: [opened, synchronize, reopened] # For validation
-
-  pull_request_target: # or pull_request
-    types: [closed] # for cleanup
+    types: [opened, synchronize, reopened, closed] # closed is for clean up
 
 permissions:
   pull-requests: write
@@ -60,4 +57,5 @@ jobs:
       - name: Delete Test Stack
         run: |
           stack_name="pr-test-stack-${{ github.event.pull_request.number }}"
-          aws cloudformation delete-stack --stack-name $stack_name
+          echo "would delete stack: $stack_name"
+          # aws cloudformation delete-stack --stack-name $stack_name
