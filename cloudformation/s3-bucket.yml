@@ -10,7 +10,7 @@ Parameters:
       - staging
       - production
 
-Resources:
+Resources: #My S3 bucket
   MyS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
